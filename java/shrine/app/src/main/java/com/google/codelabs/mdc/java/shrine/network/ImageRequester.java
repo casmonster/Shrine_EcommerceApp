@@ -22,9 +22,8 @@ public class ImageRequester {
     private final int maxByteSize;
 
     private ImageRequester() {
-        context = ShrineApplication.getAppContext();
-        this.requestQueue = Volley.newRequestQueue(context);
-        this.requestQueue.start();
+        this.context = ShrineApplication.getAppContext();
+        this.requestQueue = Volley.newRequestQueue(this.context);
         this.maxByteSize = calculateMaxByteSize();
         this.imageLoader =
                 new ImageLoader(

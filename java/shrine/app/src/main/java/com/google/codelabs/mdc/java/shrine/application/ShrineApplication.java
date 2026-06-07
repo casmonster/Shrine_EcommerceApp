@@ -24,8 +24,7 @@ public class ShrineApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-
-        this.setAppContext(getApplicationContext());
+        appContext = getApplicationContext();
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
     }
 }
