@@ -3,6 +3,7 @@ package com.google.codelabs.mdc.java.shrine;
 import android.graphics.Rect;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
@@ -10,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
  * small amount of padding to the left of grid items, and a large amount of padding to the right.
  */
 public class ProductGridItemDecoration extends RecyclerView.ItemDecoration {
-    private int largePadding;
-    private int smallPadding;
+    private final int largePadding;
+    private final int smallPadding;
 
     public ProductGridItemDecoration(int largePadding, int smallPadding) {
         this.largePadding = largePadding;
@@ -19,10 +20,10 @@ public class ProductGridItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     @Override
-    public void getItemOffsets(Rect outRect, View view,
-                               RecyclerView parent, RecyclerView.State state) {
+    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view,
+                               @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
         outRect.left = smallPadding;
-        outRect.right = smallPadding;
+        outRect.right = largePadding;
         outRect.top = largePadding;
         outRect.bottom = largePadding;
     }

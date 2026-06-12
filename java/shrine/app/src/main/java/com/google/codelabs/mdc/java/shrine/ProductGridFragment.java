@@ -42,7 +42,7 @@ public class ProductGridFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         int largePadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
-        // recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
+        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
 
         return view;
     }
